@@ -1,0 +1,30 @@
+info:
+  name: '@project.artifactId@'
+  description: '@project.description@'
+  version: '@project.version@'
+
+management:
+  security:
+    enabled: false
+ 
+spring:
+  boot:
+    admin:
+      url: http://localhost:1111
+      username: admin
+      password: admin123
+    
+  cloud: 
+    config:
+      server:
+        git:
+          uri: file:///C:/Users/singmah/.m2/repository/config-repository/config
+          searchPaths: config
+
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8760/eureka/
+  instance:
+        preferIpAddress: true
+

@@ -1,2 +1,2 @@
 # config-server-repository
-spring boot config server which contains micro services project configured files
+Spring boot config server which provides configuration file to it's client based on profiles from configured config-repository...
