@@ -1,0 +1,9 @@
+*.class
+*.lst
+*.original
+*.jar
+*.springBeans
+*.prefs
+*.project
+*.classpath
+*target
