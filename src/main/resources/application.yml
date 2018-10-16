@@ -8,23 +8,30 @@ management:
     enabled: false
  
 spring:
-  boot:
-    admin:
-      url: http://localhost:1111
-      username: admin
-      password: admin123
-    
   cloud: 
     config:
       server:
         git:
-          uri: file:///C:/Users/singmah/.m2/repository/config-repository/config
-          searchPaths: config
+#        If you are using local repository!
+          uri: file:///S:/repository/config-repository
+#        If you are using cloud repository!
+#          uri: https://github.com/singhmahabir/config-repository
 
-eureka: 
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8760/eureka/
-  instance:
-        preferIpAddress: true
+          searchPaths: config
+          
+# If you are using Admin server and want to registered your application as Admin client then add below configuration. 
+#  boot:
+#    admin:
+#      url: http://localhost:1111
+#      username: admin
+#      password: admin123
+#    
+
+# If you are using registry server and want config-client access configuration via registry server then use.
+#eureka: 
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8760/eureka/
+#  instance:
+#        preferIpAddress: true
 

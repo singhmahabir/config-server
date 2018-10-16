@@ -1,8 +1,6 @@
 spring:
   application:
     name: 'ConfigServer'
-    id: cfg
    
 server:
   port: 8701
-  

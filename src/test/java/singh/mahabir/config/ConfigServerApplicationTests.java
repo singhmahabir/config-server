@@ -1,4 +1,4 @@
-package com.mahabir.config;
+package singh.mahabir.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
