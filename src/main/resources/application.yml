@@ -2,7 +2,8 @@ info:
   name: '@project.artifactId@'
   description: '@project.description@'
   version: '@project.version@'
-
+  
+# If you want to consumed Actuator restricted command 
 management:
   security:
     enabled: false
@@ -12,12 +13,14 @@ spring:
     config:
       server:
         git:
-#        If you are using local repository!
+# If you are using local repository! , then use 'uri: file:///S:/repository/config-repository'
 #          uri: file:///S:/repository/config-repository
-#        If you are using cloud repository!
+
+# If you are using cloud repository!
           uri: https://github.com/singhmahabir/config-repository
+          
 # 'https://github.com/singhmahabir/config-repository' Or 'file:///S:/repository/config-repository' is directory where .git should present
-# and config is a sub directory where your file presents , even 'searchPaths: config' is upto you if you want to implement like this
+# and 'config' is a sub directory where your file presents , even 'searchPaths: config' is upto you if you want to implement like this
           searchPaths: config
           
 # If you are using Admin server and want to registered your application as Admin client then add below configuration. 
@@ -25,14 +28,17 @@ spring:
 #    admin:
 #      url: http://localhost:1111
 #      username: admin
-#      password: admin123
-#    
+#      password: admin123  
 
 # If you are using registry server and want config-client access configuration via registry server then use.
-#eureka: 
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8760/eureka/
-#  instance:
-#        preferIpAddress: true
-
+eureka: 
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8760/eureka/
+  instance:
+        preferIpAddress: true
+# Below properties is required when we are using basic Authorization
+security:
+  user:
+    name: user
+    password: user

@@ -1,6 +1,7 @@
 spring:
   application:
-    name: 'ConfigServer'
+    name: 'configserver'
+    # It is the defaul name of config-server
    
 server:
   port: 8701

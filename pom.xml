@@ -29,18 +29,23 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+          <!-- If you want to secure your config server -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- when you want to make your application as client of registry Service -->
-        <!-- <dependency>
+        <!-- when you want config-client can consumed config-server properties through registry Service -->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
-            </dependency>
-        -->
+        </dependency>
+
         <!-- when you want to make your application as client of Admin Service -->
         <!-- <dependency>
             <groupId>de.codecentric</groupId>
@@ -57,7 +62,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--This is required when you need to add spring-boot-admin related configuration   -->
+            <!--This is required when you need to add spring-boot-admin related configuration -->
             <!-- <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-dependencies</artifactId>
@@ -76,5 +81,5 @@
             </plugin>
         </plugins>
     </build>
-    
+
 </project>
