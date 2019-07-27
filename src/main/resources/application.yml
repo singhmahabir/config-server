@@ -1,12 +1,26 @@
+# info property details shows in actuators info url http://localhost:8760/actuator/info
 info:
   name: '@project.artifactId@'
   description: '@project.description@'
   version: '@project.version@'
+  id: cfg
+  artifactId: '@project.artifactId@'
+  packaging: '@project.packaging@'
+  groupId: '@project.groupId@'
   
-# If you want to consumed Actuator restricted command 
+# If you want to consumed Actuator restricted command but upto 1.x.x actuator version 
+#management:
+#  security:
+#    enabled: false
+# From 2.x.x you need to use below properties to enable restricted endpoints of actuator
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude:
+        - env
+        - beans
  
 spring:
   cloud: 
@@ -19,14 +33,27 @@ spring:
 # If you are using cloud repository!
           uri: https://github.com/singhmahabir/config-repository
           
-# 'https://github.com/singhmahabir/config-repository' Or 'file:///S:/repository/config-repository' is directory where .git should present
-# and 'config' is a sub directory where your file presents , even 'searchPaths: config' is upto you if you want to implement like this
+# 'https://github.com/singhmahabir/config-repository' Or 'file:///S:/repository/config-repository' is directory where .git 
+# should present and 'config' is a sub directory where your file presents , even 'searchPaths: config' is upto you if you want
+# to implement like this
           searchPaths: config
           
+# Below properties is required when we are using basic Authorization
+  security:
+   user:
+    name: user
+# If we don’t configure the password using the predefined property spring.security.user.password and start the application,
+# we’ll notice that a default password is randomly generated and printed in the console log:
+# Using default security password: c8be15de-4488-4490-9dc6-fab3f91435c6
+    password: user
+  
+          
 # If you are using Admin server and want to registered your application as Admin client then add below configuration. 
+#spring:
 #  boot:
 #    admin:
 #      url: http://localhost:1111
+# below two properties are required when admin server is secured
 #      username: admin
 #      password: admin123  
 
@@ -37,8 +64,3 @@ eureka:
       defaultZone: http://localhost:8760/eureka/
   instance:
         preferIpAddress: true
-# Below properties is required when we are using basic Authorization
-security:
-  user:
-    name: user
-    password: user
