@@ -13,12 +13,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 
 @SpringBootApplication
-
 /*
  * To start config server you have to use @EnableConfigServe
  */
 @EnableConfigServer
-
 /*
  * this annotation is required when Config-client will consumed properties files through registry server.
  */
