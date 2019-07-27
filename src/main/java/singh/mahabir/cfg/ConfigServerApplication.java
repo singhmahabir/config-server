@@ -1,4 +1,4 @@
-package singh.mahabir.config;
+package singh.mahabir.cfg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
