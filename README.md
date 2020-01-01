@@ -7,10 +7,9 @@ when you have used cloud url like
 uri: https://github.com/singhmahabir/config-repository
 ````
 
-> Runs on port 8701
-
-##### you can run the application using maven like below
-> mvn spring-boot:run
+##### you can run the application using maven and port like below
+> - mvn spring-boot:run
+> - Runs on port 8701
 
 ** config server urls **
 1. https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html
