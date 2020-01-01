@@ -1,0 +1,23 @@
+spring:
+  profiles: config.server
+ 
+  cloud: 
+    config:
+      server:
+#      if you don't want to decrpt at server lavel so client need cipher key to decrypt the value 
+        encrypt:
+          enabled: false
+        git:
+# If you are using local repository! , then use 'uri: file:///S:/repository/config-repository'
+#          uri: file:///S:/repository/config-repository
+
+# If you are using cloud repository!
+          uri: https://github.com/singhmahabir/config-repository
+          #          for private repository
+#          username: 
+#          password: 
+          
+# 'https://github.com/singhmahabir/config-repository' Or 'file:///S:/repository/config-repository' is directory where .git 
+# should present and 'config' is a sub directory where your file presents , even 'searchPaths: config' is upto you if you want
+# to implement like this
+          searchPaths: config

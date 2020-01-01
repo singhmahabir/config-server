@@ -1,10 +1,18 @@
 spring:
   application:
     name: 'configserver'
-    # It is the defaul name of config-server
+    # It is the default name of config-server
+  cloud: 
+    config:
+      server:
+#      if you don't want to decrpt at server lavel so client need cipher key to decrypt the value 
+#       It is mandatory to use this properties here
+        encrypt:
+          enabled: false
    
 server:
   port: 8701
+encrypt:  key: ABCDEFGHIJKLMNOPQRSTUVWXYZ
 #  you can use eureka properties in bootstrap as well
 #eureka:
 #  client:
